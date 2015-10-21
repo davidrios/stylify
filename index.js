@@ -98,6 +98,9 @@ function compile(file, data, options) {
   if (sourceMapSettings === true) {
     sourceMapSettings = defaultSourceMapSettings;
   }
+  if (sourceMapSettings === undefined && options['sourcemapInline']) {
+    sourceMapSettings = defaultSourceMapSettings;
+  }
 
   style.set('sourcemap', sourceMapSettings);
 
